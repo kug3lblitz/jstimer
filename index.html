@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <div id='one' style='display: none'>
+        <p>Content for one</p>
+   </div>
+   <div id='two' style='display: none'>
+        <p>Content for two</p>
+   </div>
+   <div id='three' style='display: none'>
+        <p>Content for three</p>
+   </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script await>
+    $ = jQuery;
+    window.setInterval(function(){
+        let current = new Date();
+        let expiry = new Date("April 26, 2020 19:18:00")
+        let expiry2 = new Date("April 26, 2020 19:18:30")
+
+        if(current.getTime()>expiry.getTime()){
+            $('#one').hide();
+            $('#two').show();
+        }
+        if (current.getTime()>expiry2.getTime()){
+            $('#two').hide();
+            $('#three').show();
+        }
+    }, 500);
+    $('#one').show();
+</script>
+</html>
